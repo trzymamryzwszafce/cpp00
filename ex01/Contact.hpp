@@ -12,6 +12,9 @@ class Contact
 		std::string nickname;
 		std::string phonenumber;
 		std::string darkestsecret;
+		int         isWhitespace(std::string input);
+		int         phoneCheck(std::string input);
+		std::string printFormat(std::string input);
 
 	public:
 		Contact();
