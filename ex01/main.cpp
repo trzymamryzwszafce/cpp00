@@ -1,13 +1,19 @@
 #include "PhoneBook.hpp"
-#include "Contact.hpp"
 
 int	main()
 {
-	Contact contact;
+	PhoneBook phonebook;
+	std::string prompt;
+	while (1)
+	{
+		std::cout << "Write 'ADD' to add contact, 'SEARCH' to check contacts, 'EXIT' to end program: ";
+		std::getline(std::cin, prompt);
 
-//	std::string name;
-	contact.setVariable();
-	contact.printContact();
-	
-	return (0);
+		if (prompt == "ADD")
+			phonebook.addContact();
+		if (prompt == "SEARCH")
+			phonebook.searchContact();
+		if (prompt == "EXIT")
+			return 0;
+	}
 }

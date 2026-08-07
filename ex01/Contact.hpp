@@ -2,7 +2,7 @@
 #define CONTACT_HPP
 
 #include <iostream>
-#include <string>
+#include <iomanip>
 
 class Contact
 {
@@ -17,6 +17,7 @@ class Contact
 		Contact();
 
 		void setVariable();
+		void printIndex(int index);
 		void printContact();
 		std::string getVariable(std::string message);
 };

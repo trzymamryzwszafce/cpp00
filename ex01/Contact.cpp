@@ -11,6 +11,14 @@ void Contact::printContact()
 	std::cout << "sekret: " << this->darkestsecret << std::endl;
 }
 
+void Contact::printIndex(int index)
+{
+	std::cout	<< std::setw(10) << index << "|"
+				<< std::setw(10) << this->firstname << "|"
+				<< std::setw(10) << this->lastname << "|"
+				<< std::setw(10) << this->nickname << "|" << std::endl;
+}
+
 void Contact::setVariable()
 {
 	this->firstname = getVariable("Enter first name: ");
@@ -24,7 +32,14 @@ void Contact::setVariable()
 std::string Contact::getVariable(std::string message)
 {
 	std::string input;
+
+start:
 	std::cout << message;
 	std::getline(std::cin, input);
+	if (input.size() == 0)
+	{
+		std::cout << "Input cannot be empty" << std::endl;
+		goto start;
+	}
 	return(input);
 }
