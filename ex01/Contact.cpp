@@ -39,12 +39,12 @@ int	 Contact::isWhitespace(std::string input)
 
 int  Contact::phoneCheck(std::string input)
 {
-	unsigned i = input.size();
+	int i = input.size();
 	if (i != 9)
 		return 1;
-	for (; i <= 9; i++)
+	for (i = 0; i < 9; i++)
 	{
-		if (std::isdigit(input[i]))
+		if (!std::isdigit(input[i]))
 			return 1;
 	}
 	return (0);
