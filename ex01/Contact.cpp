@@ -37,6 +37,16 @@ int	 Contact::isWhitespace(std::string input)
 	return 1;
 }
 
+int	Contact::alphaCheck(std::string input)
+{
+	for (unsigned int i = 0; i < input.size(); i++)
+	{
+		if (!std::isalpha(input[i]))
+			return 1;
+	}
+	return 0;
+}
+
 int  Contact::phoneCheck(std::string input)
 {
 	int i = input.size();
@@ -75,10 +85,18 @@ start:
 				goto start;
 			}
 		}
+		else if (message == "Enter first name: " || message == "Enter last name: ")
+		{
+			if (alphaCheck(input))
+			{
+				std::cout << "Enter only letters" << std::endl;
+				goto start;
+			}
+		}
 		else if (input.size() == 0 || isWhitespace(input))
-	{
-		std::cout << "Input cannot be empty" << std::endl;
-		goto start;
-	}
+		{
+			std::cout << "Input cannot be empty" << std::endl;
+			goto start;
+		}
 	return(input);
 }

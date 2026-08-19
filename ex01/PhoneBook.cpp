@@ -27,6 +27,11 @@ void PhoneBook::searchContact()
 start:
 	std::cout << std::endl << "Enter Index: ";
 	std::getline(std::cin, str);
+	if (str[1])
+	{
+		std::cout << "Wrong index provided" << std::endl;
+		goto start;
+	}
 	std::stringstream ss(str);
 	ss >> number;
 	number--;
